@@ -1,0 +1,9 @@
+public class Hellojava {
+
+	public static void main(String[] args) {
+    int a;
+    Scanner in=new Scanner(system.in);
+    a=in.nextInt();
+    System.out.println(a);
+
+}
