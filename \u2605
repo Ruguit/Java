@@ -1,0 +1,10 @@
+import java.util.Scanner;
+public class Uni {
+
+	public static void main(String[] args) {
+		
+    //  \u2605 ★
+		char c='\u2605';
+		System.out.println("    ★");
+		System.out.println(" ★ ★");
+		System.out.println("  ★");*/
