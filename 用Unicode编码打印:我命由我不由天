@@ -1,0 +1,13 @@
+public class Char {
+
+	public static void main(String[] args) {  
+    char a2='\u547d';
+		char a3='\u7531';
+		char a4='\u6211';
+		char a5='\u4e0d';
+		char a6='\u7531';
+		char a7='\u5929';
+		System.out.println(a2+""+a3+""+a4+""+a5+""+a6+""+a7);
+		
+	}
+}
