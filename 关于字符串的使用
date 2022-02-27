@@ -1,0 +1,12 @@
+class test {
+public static void main (String[] args){
+    System.out.println('a');//a
+		System.out.println('a'+1);// 98
+		// 因为1是int数，所以当a与1混合运算时，a由float转换为int，
+		//  又因为字符a 对应97，所以最后的结果是98，
+		System.out.println((char)('a'+1));// b
+		System.out.println("hello"+'a'+1);//helloa1
+		System.out.println('a'+1+"hello");//98hello
+		//任何数据类型用+与字符串相连都会产生新的字符串
+  }
+  }
