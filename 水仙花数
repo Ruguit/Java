@@ -1,0 +1,17 @@
+class Shui_Xian_hua{
+/*
+		 水仙花数就是☞一个三位数，其他
+		 各个位的立方和等于它本身
+		 */
+		//取值范围：100——999
+  public static void main(String[] args){
+    for(int i=100;i<=999;i++){
+      int Ge=i%10;//个位
+      int Shi=i/10%10;//十位
+      int bai=i/10/10；//百位
+      if(Ge*Ge*Ge+Shi*Shi*Shi+Bai*Bai*Bai==i){
+      System.out.println(i+"是水仙花数");//依次输出水仙花数
+      }
+    }
+  }
+}
