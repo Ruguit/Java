@@ -1,0 +1,14 @@
+calss{
+  public static void main(String[] args){
+  int num=0;
+		for(int i=100;i<=999;i++) {
+			int ge=i%10;
+			int shi=i/10%10;
+			int bai=i/10/10%10;
+			int sum;
+			sum=ge*ge*ge+shi*shi*shi+bai*bai*bai;
+			if(sum==i) num++;
+		}
+		System.out.println(num);
+  }
+}
