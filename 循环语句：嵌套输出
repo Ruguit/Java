@@ -1,0 +1,27 @@
+class qianTao{
+public static void main(String[] args){
+   //循环语句：嵌套输出
+		/*
+		 输出 ****
+		 	  ****
+		 	  ****
+		 	  ****	
+		 */
+		//  代码如下：
+		for(int add=1;add<=4;add++) {
+			for(int ass=1;ass<=4;ass++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		} 	
+		
+		//循环嵌套输出正三角形
+		for(int ch=1;ch<=5;ch++) {
+			for(int kuan=1;kuan<=ch;kuan++) {
+				System.out.print("*");
+				}
+			System.out.println();
+		}
+	
+  }
+}
