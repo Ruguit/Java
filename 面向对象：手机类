@@ -1,0 +1,17 @@
+class phone{
+	String brand;
+	int price;
+	String color;
+	public void miaoShu(String a,String b,int c) {
+		System.out.print("手机品牌是"+a+'\n'+"颜色是"+b+'\n'+"售价："+c);
+	}
+}
+class phoneDamo{
+	public static void main(String[] args) {
+		phone s=new phone();
+		s.brand="华为";
+		s.price=4999;
+		s.color="至尊黑金";
+		s.miaoShu(s.brand,s.color,s.price);
+	}
+}                                
