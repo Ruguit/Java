@@ -1,0 +1,24 @@
+小鱼给自己的游泳时间做了精确的计时（本题中的计时都按24小时制计算），
+//它发现自己从a时b分一直游泳到当天的c时d分，请你帮小鱼计算一下，
+//它这天一共游了多少时间呢？
+import java.util.Scanner;
+class test{
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("开始的时间：");
+		int a=in.nextInt();
+		System.out.println("小时");
+		int b=in.nextInt();
+		System.out.println("分");
+		System.out.println("结束的时间：");
+		int c=in.nextInt();
+		System.out.println("小时");
+		int d=in.nextInt();
+		System.out.println("分");
+		int num1=a*60+b;
+		int num2=c*60+d;
+		int sum1=(num2-num1);
+		System.out.println("游泳消耗的时间是"+sum1+"分");
+		
+	}
+}
