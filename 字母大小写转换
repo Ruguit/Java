@@ -1,0 +1,14 @@
+
+//输入一个小写字母，输出其对应的大写字母。例如输入 q[回车] 时，会输出 Q。
+import java.util.Scanner;
+class Test{
+	public static void main(String[] args) {
+		char ch;
+		Scanner in = new Scanner(System.in);
+		System.out.println("请输入一个小写字母");
+		ch=in.next().charAt(0);
+		int A;
+		A=ch-32;
+		System.out.println("对应的大写字母是："+(char)A);
+	}
+}
