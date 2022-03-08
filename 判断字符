@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Hellojava{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("请输入M或F");
+		char c =sc.next().charAt(0);    //只接收字符串的第一个字符
+		System.out.println("请输入号码");
+		int num=sc.nextInt();
+		if(c=='M') {
+			System.out.println("1000M");
+			if(num%2==1) {
+				System.out.println("跳远");
+			}else {
+				System.out.println("俯卧撑");
+			}
+		}else if(c=='F') {
+			System.out.println("800M");
+			if(num%2==1) {
+				System.out.println("跳绳");
+			}else {
+				System.out.println("仰卧起坐");
+			}
+		}
+		
+	}
+}
