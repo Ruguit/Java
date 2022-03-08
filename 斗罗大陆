@@ -1,0 +1,18 @@
+import java.util.Scanner;
+class helloJava{
+	public static void main(String[] args) {
+		Scanner sc =new Scanner (System.in);
+		int a=sc.nextInt();
+		switch(a/10) {
+		case 6:System.out.println("斗者");
+			break;
+		case 7:System.out.println("斗师");
+			break;
+		case 9:
+		case 10:System.out.println("斗王");
+			break;
+		default:System.out.println("骚年，下一个箫炎就是你");
+
+		}
+	}
+}
