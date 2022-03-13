@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class Damo{
+	public static void main(String[] args) {
+		Scanner a=new Scanner(System.in);
+		int n=a.nextInt();//n个站台
+		int arr1[]= new int[100] ,arr2[]= new int[100];
+		for(int i=0;i<n;i++) {
+			arr1[i]=a.nextInt();//买
+			arr2[i]=a.nextInt();//运
+		}
+		int min=9999999,t=0;
+		for(int i=0;i<n;i++) {
+			if(min>arr1[i])//在该赞，要么买一条与，要么从上一站买
+				//如果还要从上一站买，那还要加运费
+				min=arr1[i];
+			t+=min;//买鱼钱
+			min+=arr2[i];//该站卖鱼与运费总和
+		}
+		System.out.println(t);
+	}
+}
