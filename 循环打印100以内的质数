@@ -1,0 +1,17 @@
+
+public class Test {
+//循环打印100以内的质数
+	public static void main(String[] args) {
+	for(int i=2;i<=100;i++) {
+		boolean q=true;
+		for(int j=2;j<i;j++) {
+			if(i%j==0)
+				q=false;
+		}
+		boolean a;
+		if(a=q)System.out.print(i+" ");
+	}
+	
+	}
+
+}
