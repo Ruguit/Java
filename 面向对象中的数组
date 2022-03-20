@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+class Math{
+	private int []arr=new int[10];
+	public void setarr(int []arr) {
+		this.arr=arr;
+	}
+	public void getarr() {
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(arr[i]);
+		}
+	}
+}
+public class MathDamo {
+	public static void main(String[] args) {
+		Scanner in=new Scanner(System.in);
+		int []arr=new int[10];
+		int i=0;
+		while(i<arr.length) {
+			arr[i]=in.nextInt();
+			i++;
+		}
+		Math s=new Math();
+		s.setarr(arr);
+		s.getarr();
+	}
+
+}
