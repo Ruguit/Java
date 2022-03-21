@@ -1,0 +1,46 @@
+import java.util.Scanner;
+class Test{
+	private int shang;
+	private int xia;
+	public Test() {
+	}
+	public void setshang(int shang) {
+		this.shang=shang;
+	}
+	public void setxia(int xia) {
+		this.xia=xia;
+	}
+	public void show() {
+		for(int i=1;i<=shang;i++) {
+			for(int j=1;j<=shang-i;j++) {
+				System.out.print(" ");
+			}
+			for(int k=1;k<=i;k++) {
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}
+		for(int i=1;i<=xia;i++) {
+			for(int j=1;j<=i;j++) {
+				System.out.print(" ");
+			}
+			for(int k=1;k<=(xia+1)-i;k++) {
+				System.out.print("*"+" ");
+			}
+			System.out.println();
+		}
+	}
+}
+public class TestDamo {
+
+	public static void main(String[] args) {
+		Test s=new Test();
+		Scanner sc=new Scanner(System.in);
+		int shang=sc.nextInt();
+		int xia=sc.nextInt();
+		s.setshang(shang);
+		s.setxia(xia);
+		s.show();
+	}
+
+}
