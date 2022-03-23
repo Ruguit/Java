@@ -1,0 +1,45 @@
+import java.util.Scanner;
+class Test{
+	private int i;
+	private int j;
+	private boolean bool;
+	private int number;
+	private int max;
+	public Test() {}
+	public void setnumber(int number) {
+		this.number=number;
+	}
+	public void show2() {
+		System.out.println("请在下面输入最大到多少");
+	}
+	public void setmax(int max) {
+		this.max=max;
+	}
+	public void show() {
+		for(i=2;i<max;i++) {
+			boolean bool=true;
+			for(j=2;j<i;j++) {
+				if(i%j==0)
+					bool=false;
+			}
+			if(bool) {
+				System.out.println(i);
+				number+=1;	
+			}
+		}
+		System.out.println(number);
+	}
+}
+public class Damo {
+
+	public static void main(String[] args) {
+		Test s=new Test();
+		Scanner sc=new Scanner(System.in);
+		s.show2();
+		s.setnumber(0);
+		int max=sc.nextInt();
+		s.setmax(max);
+		s.show();
+	}
+
+}
