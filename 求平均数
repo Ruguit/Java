@@ -1,0 +1,38 @@
+
+class Test{
+	private int []arr= {};
+	private double PingJunShu;
+	private int num=0;
+	public Test() {}
+	public void setarr(int []arr) {
+		this.arr=arr;
+	}
+	public void setnum(int num) {
+		this.num=num;
+	}
+	public void setPingJunShu(int []arr) {
+		int ans=0;
+		for(int i=0;i<arr.length;i++) {
+			ans+=arr[i];
+		}
+		this.PingJunShu=ans/arr.length;
+	}
+	public void show() {
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]>PingJunShu) num+=1;
+		}
+		System.out.println(num);
+	}
+}
+public class Damo {
+
+	public static void main(String[] args) {
+		int []arr= {1,2,3,4,5,6,7,8,9,10};
+		Test s=new Test();
+		s.setarr(arr);
+		s.setnum(0);
+		s.setPingJunShu(arr);
+		s.show();
+	}
+
+}
