@@ -1,0 +1,34 @@
+/*输入一个华氏温度，要求输出摄氏温度。公式为
+
+C=5/9（F-32）
+
+保留两位小数
+ * */
+import java.util.Scanner;
+class Test{
+	private double C,F;
+	public Test(double C) {
+		this.C= C;
+	}
+	public void show() {
+		System.out.println("请在下面输入华氏温度");
+	}
+	public void setF(double F) {
+		this.F=F;
+	}
+	public double show2() {
+		return C=(double)5/9*(F-32);
+	}
+}
+public class Damo {
+
+	public static void main(String[] args) {
+		Test s=new Test(0.0);
+		s.show();
+		Scanner sc=new Scanner(System.in);
+		double F=sc.nextDouble();
+		s.setF(F);
+		System.out.println(s.show2());
+	}
+
+}
