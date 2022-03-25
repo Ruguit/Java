@@ -1,0 +1,37 @@
+/*，输入n个整数（n从键盘输入，n>0），输出它们的偶数和。
+ * */
+import java.util.Scanner;
+class Test{
+	private int number;//number>0
+	private int sum;//偶数和
+	public Test(int i) {
+		// TODO 自动生成的构造函数存根
+	}
+	public void Test(int sum) {
+		this.sum=sum;
+	}
+	public void setnumber(int number) {
+		this.number=number;
+	}
+	public void XunHuan() {
+		for(int i=1;i<=number;i++) {
+			if(i%2==0)sum+=i;
+		}
+	}
+	public int getsum() {
+		return sum;
+	}
+	
+}
+public class Damo {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int number=sc.nextInt();
+		Test s=new Test(0);
+		s.setnumber(number);
+		s.XunHuan();
+		System.out.println(s.getsum());
+	}
+
+}
