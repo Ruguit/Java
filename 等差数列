@@ -1,0 +1,86 @@
+
+import java.util.Scanner;
+/**
+ * 这里是被调用的类
+ * @author 34980
+ *@version Eclipse IDE
+ */
+ class Test{
+
+	private int a1;
+	private int d;
+	private int n;
+	private int sum;
+	/**
+	 * 
+	 * @param sum 这里是赋予sum值
+	 */
+	public Test(int sum) {
+		this.sum=sum;
+	}
+	/**
+	 * 
+	 * @param a1 赋予值
+	 */
+	public void seta1(int a1) {
+		this.a1=a1;
+	}
+	/**
+	 * 
+	 * @param d 赋予值
+	 */
+	public void setd(int d) {
+		this.d=d;
+	}
+	/**
+	 * 
+	 * @param n
+	 */
+	public void setn(int n) {
+		this.n=n;
+	}
+	/**
+	 * 这里是一个show的void方法
+	 */
+	public void show() {
+		for(int i=1;i<=this.n;i++) {
+			this.sum+=this.d;
+		}
+		System.out.println("这个数列的前"+n+"项和是"+this.sum);
+	}
+}
+/**
+ * 这里是调用类
+ * @author 34980
+ *@version Eclipse
+ */
+public class Test_1 {
+	/**
+	 * 这里是主函数方法
+	 * @param args 在这个方法里输入 首项 公差 以及运算次数 
+	 */
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("请在下面输入首项的大小");
+		int a1=sc.nextInt();
+		System.out.println("请在下面输入公差的大小");
+		int d=sc.nextInt();
+		System.out.println("请在下面输入运算次数");
+		int n=sc.nextInt();
+		/**
+		 * 初始化sum的值
+		 */
+		Test s=new Test(0);
+		/**
+		 * 开始调用方法
+		 */
+		s.seta1(a1);
+		s.setd(d);
+		s.setn(n);
+		/**
+		 * 得到值
+		 */
+		s.show();
+	}
+
+}
