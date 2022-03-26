@@ -1,0 +1,36 @@
+/**
+ * 输入两个正整数m和n，求其最大公约数和最小公倍数。
+ * @author 阳洋
+ * @version Eclipse IDE
+ *
+ */
+import java.util.Scanner;
+public class Damo {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int m=sc.nextInt();
+		int n=sc.nextInt();
+		int maxyue=0;
+		int maxbei=0;
+		for(int i=1;i<m;i++) {
+			if(m%i==0)maxyue=i;
+		}
+		for(int j=m;j>0;j--) {
+			if(m%j==0)maxbei=j;
+		}
+		System.out.println("m的最大公约数是"+maxyue);
+		System.out.println("m的最小公倍数是"+maxbei);
+		
+		for(int i=1;i<m;i++) {
+			if(m%i==0)maxyue=i;
+		}
+		for(int j=m;j>0;j--) {
+			if(m%j==0)maxbei=j;
+		}
+		System.out.println("n的最大公约数是"+maxyue);
+		System.out.println("n的最小公倍数是"+maxbei);
+		
+	}
+
+}
