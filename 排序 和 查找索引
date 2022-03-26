@@ -1,0 +1,12 @@
+import java.util.Arrays;
+public class test {
+
+	public static void main(String[] args) {
+		int [] a=new int [] {1,2,3,4,6,5,7,8,10};//9个下标
+		Arrays.sort(a);//从小到大排序
+		int number = Arrays.binarySearch(a,0/*索引*/,8/*8是10的索引 但范围不会到10*/,10);
+		System.out.println(number);
+	
+	}
+
+}
