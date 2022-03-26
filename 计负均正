@@ -1,0 +1,28 @@
+/**
+ * 从键盘输入任意20个整型数，统计其中的负数个数并求所有正数的平均值。
+ * @author 阳洋
+ * @version Eclipse IDE
+ *
+ */
+import java.util.Scanner;
+public class Damo {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int ans=0;
+		int ane=0;
+		int sum=0;
+		for(int i=1;i<=20;i++) {
+			System.out.println("请输入第"+i+"个数");
+			int a=sc.nextInt();
+			if(a<0)sum+=1;
+			else if(a>0) {
+				ans+=a;
+				ane+=1;
+			}
+		}
+		System.out.println("负数有"+sum+"个");
+		System.out.println("平均数是"+ans/ane);
+	}
+
+}
