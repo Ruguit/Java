@@ -1,0 +1,9 @@
+import java.util.Random;
+
+public class Test {
+    public static void main(String[] args) {
+        Random s=new Random();
+        int num=s.nextInt(10)+1;
+        //范围：1-10  ==>      (0-9)+1
+    }
+}
