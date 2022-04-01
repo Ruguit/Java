@@ -1,0 +1,39 @@
+package com.yangyang.test;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
+//案例三：评委打分
+/*要求：6个评委 打分范围0-100之间的整数
+        最后结果是 去掉最高和最低分数 的4个 评委的分数的平均数（输出）
+* */
+public class Test {
+
+    public static void main(String[] args) {
+        int []a=new int[6];//每一个数组的值代表一位评委的分数
+        Scanner sc=new Scanner(System.in);
+        for(int i=0;i<a.length;i++){
+            System.out.println("第"+(i+1)+"位评委的分数是：");
+            a[i]=sc.nextInt();//手动输入每一个评委的分数
+        }
+
+        int max=0,min=9999;
+
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]>max)max=i;
+        }
+        a[max]=0;
+
+        for (int i = 0; i < a.length; i++) {
+            if(a[i]<min)min=i;
+        }
+        a[min]=0;
+
+        double sum=0;
+        for (int i = 0; i < a.length; i++) {
+            sum+=a[i];
+        }
+        System.out.println(sum/(a.length-2));
+
+    }
+}
