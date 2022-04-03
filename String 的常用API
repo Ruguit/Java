@@ -1,0 +1,44 @@
+package com.yangyang.test;
+
+import java.util.Random;
+import java.util.Scanner;
+import java.util.Arrays;
+//
+/*
+* */
+public class Test {
+
+    public static void main(String[] args) {
+        String number =new String("123456789");
+
+        //public  int length(); 获取字符串长度
+        int len=number.length();
+
+        //public  char charAt(int index); 获取某个索引处的字符
+        char ch1=number.charAt(0);
+
+        //public char[] toCharArray();将当前字符串转换成字符数组
+        char []chars=number.toCharArray();
+
+        //public  String substring(int beginindex,int endindex )根据开始与结束处的索引得到新的字符串  包前不包后
+        String str1=number.substring(1,number.length());
+        //public String substring(int beginindex)从传入的索引处开始 到末尾为止 得到新的字符串
+        String str2=number.substring(1);
+
+        //public String replace(CharSequence target,CharSequence replacement)使用新值 将字符串中的旧值替换得到新的字符串
+        String str3=number.replace("1","0");
+        System.out.println(str3);
+        
+        //public boolean contains(CharSequence s)查找是否有某一元素
+        boolean flog=number.contains("9");
+
+        //public boolean startsWith(String prefix) 查找是否由某一元素开始
+        boolean flog1=number.startsWith("1");
+
+        //public String[] split(String regex)根据传入的规则切割字符串 得到字符串数组返回*/
+        String str4="1,2,3,4,5,6";
+        String []str=str4.split(",");
+
+    }
+
+}
