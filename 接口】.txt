@@ -1,0 +1,24 @@
+package Damo;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        ass s=new ass();
+        s.add();
+        System.out.println(s.getname());
+    }
+}
+interface add{
+    void add();
+    public static final String SCHOOL_NAME ="民院";
+}
+class ass implements add{
+
+    @Override
+    public void add() {
+        System.out.println("add");
+    }
+    public String getname(){
+        return SCHOOL_NAME;
+    }
+}
