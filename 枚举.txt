@@ -1,0 +1,15 @@
+package Damo;
+
+public class Test {
+
+    public static void main(String[] args) {
+    show(Seacon.one);  
+
+    }
+
+    private static void show(Seacon one) {
+    }
+}
+enum Seacon{
+        one,twe,three;
+}
