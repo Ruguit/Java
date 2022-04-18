@@ -1,0 +1,26 @@
+package Damo;
+
+public class Test {
+    
+    public static void main(String[] args) {
+        Zi z=new Zi();
+        z.add();
+        z.add1();
+        z.add2();
+    }
+}
+abstract class Fu{
+    public void add(){
+        System.out.println("父类");
+    }
+    public abstract void add1();
+}
+class Zi extends Fu{
+    public void add2(){
+        System.out.println("子类");
+    }
+    @Override
+    public void add1() {
+        System.out.println("add1");
+    }
+}
