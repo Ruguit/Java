@@ -1,0 +1,10 @@
+class Test{
+  public static void main(String[] args){
+  System.out.println("今天是:");
+		long toDayTime=System.currentTimeMillis();
+		Date tDT=new Date(toDayTime);
+		SimpleDateFormat date=new SimpleDateFormat();
+		String dateTime=date.format(tDT);
+		System.out.println(dateTime);
+  }
+}
