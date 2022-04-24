@@ -1,0 +1,30 @@
+public class Test_2 {
+	public static void main(String[] args) throws ParseException {
+		Date d=new Date();
+		System.out.println(d);//Sun Apr 24 19:02:34 CST 2022
+		long d1=d.getTime();
+		System.out.println(d1);//1650798228855
+		SimpleDateFormat s=new SimpleDateFormat();
+		String Time=s.format(d);
+		System.out.println(Time);//2022/4/24 下午7:06
+		SimpleDateFormat s1=
+				new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+		String Time1=s1.format(d);
+		System.out.println(Time1);//2022年04月24日 19:12:20
+		
+		Date d2=new Date(d1);//毫秒值转日期对象
+		System.out.println(d2);
+		
+		String timeDay="2000年02月26日21点11分23秒";
+		SimpleDateFormat ss=
+				new SimpleDateFormat("yyyy年MM月dd日HH点mm分ss秒");
+		Date dd=ss.parse(timeDay);
+		System.out.println(dd);
+		
+		Date DD=new Date(System.currentTimeMillis());
+		String str=ss.format(DD);
+		System.out.println(str);
+		
+		
+	}
+}
