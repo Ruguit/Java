@@ -1,0 +1,16 @@
+
+public class Test {
+    public static void main(String[] args)  {
+        //StringBuilder 添加字符串 并不是字符串 一般要使用toString（）方法转换位String类型
+        StringBuilder stringBuilder=new StringBuilder();
+        stringBuilder.append("java").append("jdk");
+        //添加add（）方法， 支持链式写法
+        System.out.println(stringBuilder.toString());
+        stringBuilder.reverse();//反转
+        System.out.println(stringBuilder);
+        System.out.println(stringBuilder.length());//得到长度
+        
+
+    }
+}
+
