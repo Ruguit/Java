@@ -1,0 +1,29 @@
+import java.math.BigDecimal;
+import java.util.Objects;
+import java.util.Scanner;
+ 
+public class Test {
+    public static void main(String[] args) {
+    /*高进度运算 BigDeciaml 的使用
+    加法 add()函数     减法subtract()函数
+乘法multiply()函数    除法divide()函数    绝对值abs()函数
+    * */
+        Scanner sc=new Scanner(System.in);
+        double number1=sc.nextInt();
+        double number2=sc.nextInt();
+        BigDecimal bigDecimal1=new BigDecimal(number1);
+        BigDecimal bigDecimal2=new BigDecimal(number2);
+        
+        //加法
+        BigDecimal bigDecimaladd=bigDecimal1.add(bigDecimal2);
+        //减法
+        BigDecimal bigDecimalsubtract=bigDecimal1.subtract(bigDecimal2);
+        //乘法
+        BigDecimal bigDecimalmultiply=bigDecimal1.multiply(bigDecimal2);
+        //除法
+        BigDecimal bogDecimaldivide=bigDecimal1.divide(bigDecimal2);
+        //绝对值
+        BigDecimal bigDecimalabs=bigDecimal1.abs();
+    }
+}
+ 
