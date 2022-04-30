@@ -1,0 +1,23 @@
+import java.util.Objects;
+
+public class Test {
+    public static void main(String[] args) {
+        //System的使用
+        long time=System.currentTimeMillis();//得到当前时间毫秒值
+        System.out.println(time);
+
+        //System.arraycopy 数组的复制
+        int []arr=new int []{1,2,3,4};
+        int []aee=new int [4];
+        System.arraycopy(arr,0,aee,0,arr.length);
+        //从数组arr的索引0处中复制arr.lengt个元素到aee的索引0处
+        for(int i:aee){
+            System.out.print(i+" ");
+        }
+        System.exit(0);//JVM终止运行
+    }
+}
+class Student{
+
+}
+
