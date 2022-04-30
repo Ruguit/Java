@@ -1,0 +1,58 @@
+import java.util.Objects;
+
+public class Test {
+    public static void main(String[] args) {
+        //关于Object类的使用
+        //一般使用 以下两种方法
+        //1：toString()方法 用于被子类重写，以便于返回信息
+        Student s=new Student();
+        s.name="李华";
+        s.age=18;
+        System.out.println(s);//一般在这里是打印地址
+        /*
+         @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+        * */
+        //但是我们使用toString()方法重写了内容 所以打印Student{name='李华', age=18}
+
+     //2:equals 用于重写定义比较的内容
+        Student s1=new Student();
+        s1.name="李华";
+        s1.age=19;
+        System.out.println(s.equals(s1));//false
+        //同时比较了name与age
+        //name相同但是age不相同
+        //所以返回值是false
+
+    }
+}
+class Student{
+     String name;
+     int age;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name);
+    }
+    /*
+    在这里重写方法
+    * */
+
+}
+
