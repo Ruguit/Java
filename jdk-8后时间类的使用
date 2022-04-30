@@ -1,0 +1,28 @@
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+ 
+public class Test {
+    public static void main(String[] args)  {
+        LocalDate localDate= LocalDate.now();
+        LocalTime localTime= LocalTime.now();
+        LocalDateTime localDateTime= LocalDateTime.now();
+        Instant instance=Instant.now();
+ 
+        System.out.println(localDate.getYear());//2022
+        System.out.println(localTime.getHour());//2
+        System.out.println(localDateTime.getMonth());//MAY
+ 
+        LocalDate date1=LocalDate.of(2000,11,11);
+        LocalDate date2=LocalDate.of(2000,11,1);
+        Period p= Period.between(date1,date2);
+        System.out.println(p);
+ 
+        LocalTime time1=LocalTime.of(11,11,11);
+        LocalTime time2=LocalTime.of(11,11,1);
+        Duration d=Duration.between(time1,time2);
+        System.out.println(d);
+        System.out.println(ChronoUnit.SECONDS.between(time2, time1));
+    }
+}
+ 
