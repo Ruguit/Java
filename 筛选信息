@@ -1,0 +1,36 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Test {
+    public static void main(String[] args)  {
+       String number="bsajlbc12345678900fjqo;VNQA89H4BNQNNCBNJCn;n；哦你不n;np" +
+               "13634859061nav3498058877@qq.com";
+        Pattern p=Pattern.compile("1[3-9][\\d]{9}|[\\d]{10}@qq\\.com");
+        Matcher m=p.matcher(number);
+        System.out.println("手机号与qq邮箱号：");
+        Patterns.patterns(m);
+
+        Pattern p1=Pattern.compile("[0-9]+");
+        Matcher m1=p1.matcher(number);
+        System.out.println("数字:");
+        Patterns.patterns(m1);
+
+        Pattern p3=Pattern.compile("[a-zA-Z]+");
+        Matcher m3= p3.matcher(number);
+        System.out.println("字母：");
+        Patterns.patterns(m3);
+
+        Pattern p2=Pattern.compile("[\\D&&[\\W]]+");
+        Matcher m2= p2.matcher(number);
+        System.out.println("符号与无关字符");
+        Patterns.patterns(m2);
+    }
+}
+class Patterns{
+
+    public static void patterns(Matcher m1){
+        while(m1.find()){
+            System.out.println(m1.group());
+        }
+    }
+}
