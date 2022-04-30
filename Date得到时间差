@@ -1,0 +1,22 @@
+mport java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+ 
+public class Test {
+    public static void main(String[] args) throws ParseException {
+        Date nowTime=new Date();
+        SimpleDateFormat simpleDateFormat=
+                new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String ageTime="2022-3-3 11:11:11";
+        Date ageDate=simpleDateFormat.parse(ageTime);
+        long nowTimeLong=nowTime.getTime();
+        long ageDateLong=ageDate.getTime();
+        long cha=nowTimeLong-ageDateLong;
+        System.out.println(cha/1000/60/60/24);//得到天数
+        System.out.println(cha/1000/60/60);//得到小时
+        System.out.println(cha/1000/60);//得到分钟
+        System.out.println(cha/1000);//得到秒
+    }
+}
+ 
+
