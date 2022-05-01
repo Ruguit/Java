@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class Test {
+    public static void main(String[] args)  {
+        /*
+        * Lambda表达式
+        *格式： （匿名内部类的重写方法的形参列表)->{重写的方法体}
+        * 注意：只能是一个抽象方法的接口
+        * 必须是抽象的 只能有一个方法
+        * */
+        Animal animal=(() ->{System.out.println("run");});//重写
+        animal.run();
+        Dog d=((a,b)->{return a+b;});//重写
+        System.out.println(d.add(1, 1));
+
+
+    }
+}
+interface Animal{
+     void run();
+}
+interface Dog{
+    int add(int a,int b);
+}
+
