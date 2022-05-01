@@ -1,0 +1,38 @@
+package com.yangyang.d3_Collection_List;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Consumer;
+
+public class Test {
+    public static void main(String[] args) {
+       //List集合的遍历
+        //相较于Collection集合，除了继承Collection集合的三大遍历方式以外
+        //添加了使用for循环的遍历方式，（List集合存在索引）
+
+        //1:创建List集合
+        List<String>list=new ArrayList<>();
+        list.add("java");
+        list.add("java");
+        list.add("MySql");
+        list.add("MySql");
+
+        //for循环
+        for(int i=0;i<list.size();i++){
+            String ele=list.get(i);
+            System.out.println(ele);
+        }
+        //迭代器
+        Iterator<String> it=list.listIterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+        //foreach
+        for(String i:list){
+            System.out.println(i);
+        }
+        //Lambda表达式
+        list.forEach(l-> System.out.println(l));
+    }
+}
