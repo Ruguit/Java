@@ -1,0 +1,26 @@
+package com.yangyang.d3_Collection_List;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test {
+    public static void main(String[] args) {
+        //创建ArrayList集合
+        List<String> list=new ArrayList<>();//经典代码
+        list.add("java");
+        list.add("java");
+        list.add("MySql");
+        list.add("MySql");
+        //2:在指定索引处添加元素
+        list.add(2,"JDK");
+        //3:根据索引删除元素，返回被删除元素
+        System.out.println(list.remove(2));//JDK
+        System.out.println(list);//[java, java, MySql, MySql]
+        //4:获取
+        System.out.println(list.get(0));//java
+        //5：修改 返回修改前的数据
+        System.out.println(list.set(1,"html"));//java
+        System.out.println(list);//[java, html, MySql, MySql]
+
+    }
+}
