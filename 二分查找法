@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class Test {
+    public static void main(String[] args)  {
+        //二分查找法，适用于大量数据的查找 注意一定要先排序
+        int []arr=new int[]{1,2,34,4,5,6,7,8,98,9,687,34,32,3,13};
+        System.out.println(FindNumber(arr, 2));
+    }
+
+    /**
+     * 二分查找法的实现
+     * @param arr 被查找数组
+     * @param number 要查找的数
+     * @return 返回索引，找不到返回-1。
+     */
+    public static int FindNumber(int []arr,int number){
+        int left=0;
+        int right= arr.length-1;
+        while(left<=right){
+            int milliesNumber=arr[(right+left)/2];
+            if(milliesNumber<number){
+                left=(right+left)/2;
+            }else if(milliesNumber>number){
+                right=(right+left)/2;
+            }else {return (right+left)/2;}
+        }
+        return -1;
+    }
+}
+
+
