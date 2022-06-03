@@ -1,0 +1,20 @@
+
+import java.util.Scanner;
+
+public class MyCodingDamo {
+    public static void main(String[] args) {
+        //求n的阶乘
+        Scanner sc=new Scanner(System.in);
+        System.out.println("您要求的阶乘是？");
+        int n=sc.nextInt();
+        int numberForn=getNsum(n);
+        System.out.println(n+"的阶乘是:"+numberForn);
+    }
+    private static int getNsum(int n) {
+        if(n==1){
+            return 1;
+        }else {
+            return getNsum(n-1)*n;
+        }
+    }
+}
