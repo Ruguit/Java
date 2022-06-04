@@ -1,0 +1,19 @@
+
+public class MyCodingDamo {
+    public static void main(String[] args) {
+        /*
+        * 创建Runnable的匿名内部类对象交给Thread
+        * */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i <5 ; i++) {
+                    System.out.println("子线程执行"+i);
+                }
+            }
+        }).start();
+
+        //lambda
+        new Thread(() ->{for (int i = 0; i <5 ; i++) {System.out.println("子线程执行"+i);}}).start();
+    }
+}
