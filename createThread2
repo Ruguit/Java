@@ -1,0 +1,22 @@
+
+public class MyCodingDamo {
+    public static void main(String[] args) {
+        /*
+        *定义线程任务类 myrunnable 实现 Runnable接口
+        * 创建myrunnable任务对象
+        * 再吧任务对象交给Thread处理
+        * */
+        myrunnable mr=new myrunnable();
+        Thread t=new Thread(mr);
+        t.start();
+    }
+}
+class myrunnable implements Runnable{
+
+    @Override
+    public void run() {
+        for (int i = 0; i <5 ; i++) {
+            System.out.println("子线程执行"+i);
+        }
+    }
+}
