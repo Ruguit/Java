@@ -1,0 +1,32 @@
+List集合的并发修改异常问题：删除举例​
+public class DamoTest {
+    public static void main(String[] args){
+        List<Integer> integerList=new ArrayList<>();
+        Collections.addAll(integerList,1,2,3,4,5);
+        Iterator<Integer>it=integerList.iterator();
+        while(it.hasNext()){
+            Integer integer= it.next();
+            if(integer==2||integer==3){
+                it.remove();
+                continue;
+            }
+            System.out.println(integer);//1 4 5
+        }
+    }
+}
+
+​方法二：从后往前删除
+
+这是往前面找到，即使后面的元素上来了也不会有影想。
+​
+List<Integer> integerList=new ArrayList<>();
+        Collections.addAll(integerList,1,2,3,4,5);
+        for (int i = integerList.size() - 1; i >= 0; i--) {
+            if(integerList.get(i)==2||integerList.get(i)==3){
+                integerList.remove(i);
+                continue;
+            }
+            System.out.println(integerList.get(i));//5 4 1 
+        }
+
+​
