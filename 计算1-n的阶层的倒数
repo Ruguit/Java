@@ -1,0 +1,14 @@
+//计算1-n的阶层的倒数的和
+        Scanner sc =new Scanner(System.in);
+        int n=sc.nextInt();
+        double num=0;
+        int i=1;
+        while(i<=n){
+            double sum=1;
+            for (int i1 = 1; i1 <= i; i1++) {
+                sum*=i1;
+            }
+            num=num+1/sum;
+            i++;
+        }
+        System.out.println(num);
