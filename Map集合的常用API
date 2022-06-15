@@ -1,0 +1,61 @@
+
+ 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+ 
+public class CodingTest {
+    public static void main(String[] args) {
+        //Map集合体系
+        Map<Integer,String> maps=new HashMap<>();
+        //1：给maps集合添加数据
+        maps.put(1,"a");
+        maps.put(2,"b");
+        maps.put(3,"c");
+        maps.put(4,"d");
+        System.out.println(maps);//{1=a, 2=b, 3=c}
+        /*
+        * Map集合又称为双列集合：一个集合有俩个元素，
+        * 元素储存格式：key=value (键值对)
+        *
+        * Map集合午休==无序，不重复，无索引
+        * map集合特点是由键决定的，且键是不能重复的，后面输入的键一旦与前面的相同，后面键的值会覆盖前面的键的值
+        * */
+ 
+        //Map的常用API
+        //2；得到长度
+        int len=maps.size();
+        System.out.println(len);//4
+        //3: clear() 清空
+        //4: 判断是否为空
+        boolean flog=maps.isEmpty();
+        //5:通过键删除元素
+        maps.remove(4);
+        System.out.println(maps);//{1=a, 2=b, 3=c}
+        //判断是否有键存在
+        boolean flogKey=maps.containsKey(1);
+        System.out.println(flogKey);//true
+        //判断是否有值存在
+        boolean flogValue= maps.containsValue("d");
+        System.out.println(flogValue);//false
+        //获取所有的键到一个Set集合里面去
+        Set<Integer> set=maps.keySet();
+        System.out.println(set);//[1, 2, 3]
+        //获取所有地址到一个Collection集合里面去
+        Collection<String> collection= maps.values();
+        System.out.println(collection);//[a, b, c]
+        //将整个Map集合的元素添加到另一个Map集合中去
+        Map<Integer,String> maps1=new HashMap<>();
+        //1：给maps集合添加数据
+        maps.put(1,"a");
+        maps.put(2,"b");
+        maps.put(3,"c");
+        maps.put(4,"d");
+        maps1.putAll(maps);
+        System.out.println(maps);//{1=a, 2=b, 3=c, 4=d}
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「洋啊桑815」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_66344432/article/details/125290196
