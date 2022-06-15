@@ -1,0 +1,30 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.BiConsumer;
+ 
+public class CodingTest {
+    public static void main(String[] args) {
+        //Map集合的遍历
+        Map<Integer,String> maps=new HashMap<>();
+        //1：给maps集合添加数据
+        maps.put(1,"a");
+        maps.put(2,"b");
+        maps.put(3,"c");
+        maps.put(4,"d");
+        System.out.println(maps);//{1=a, 2=b, 3=c}
+ 
+        maps.forEach(new BiConsumer<Integer, String>() {
+            @Override
+            public void accept(Integer integer, String s) {
+                System.out.println(integer+"==="+s);
+            }
+        });
+        //Lambda表达式简化后
+        maps.forEach((K,V)->{
+            System.out.println(K+" - "+V);
+        });
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「洋啊桑815」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_66344432/article/details/125298180
