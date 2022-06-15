@@ -1,0 +1,27 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+ 
+public class CodingTest {
+    public static void main(String[] args) {
+        //Map集合的遍历
+        Map<Integer,String> maps=new HashMap<>();
+        //1：给maps集合添加数据
+        maps.put(1,"a");
+        maps.put(2,"b");
+        maps.put(3,"c");
+        maps.put(4,"d");
+        System.out.println(maps);//{1=a, 2=b, 3=c}
+ 
+        //1:键找值
+        //Set<E>keySet得到所有的键
+        Set<Integer>set=maps.keySet();
+        for (Integer integer : set) {
+            String mapsValue= maps.get(integer);
+            System.out.println(integer+"->"+mapsValue);
+        }
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「洋啊桑815」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_66344432/article/details/125298180
