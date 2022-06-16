@@ -1,0 +1,10 @@
+import java.util.List;
+public class CodingTest {
+    public static void main(String[] args) {
+        //List集合的不可变集合
+        List<Integer> list=List.of(1,2,3,4,5,6,7,8,9);
+        System.out.println(list);
+
+        list.add(0,1);//Exception in thread "main" java.lang.UnsupportedOperationException
+    }
+}
