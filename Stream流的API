@@ -1,0 +1,62 @@
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+public class CodingTest {
+    public static void main(String[] args) {
+        List<String>list=new ArrayList<>();
+        Collections.addAll(list,"1","2","3","4");
+        Stream<String>stringStream=list.stream();//只能使用一次
+        //过滤
+        stringStream.filter(s->s.equals("2")).forEach(System.out::println);//2
+        list.stream().filter(new Predicate<String>() {
+            @Override
+            public boolean test(String s) {
+                return s.equals("4");
+            }
+        }).forEach(s-> System.out.println(s));
+
+        //得到前几个
+        list.stream().limit(2).forEach(System.out::println);//1 2
+        //跳过前几个
+        list.stream().skip(2).forEach(System.out::println);// 3 4
+        //加工
+        list.stream().map(new Function<String, Object>() {
+            @Override
+            public Object apply(String s) {
+                return s+s;
+            }
+        }).forEach(System.out::println);//11 22 33 44
+        // 合并流 Stream <Object> sb=Stream.concat(流1，流2);
+        /*
+        * 终结方法; forEach();遍历数据  count 返回流中的元素量
+        *  .get():取出单个对象  .sorted() 排序 -> Comparator实现自定义排序规则
+        * */
+
+        //加工对象 将流的元素加工进入对象中去
+        list.stream().map(s->new People(s)).forEach(System.out::println);
+    }
+}
+class People{
+    private String number;
+
+    public People(String number) {
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return "People{" +
+                "number='" + number + '\'' +
+                '}';
+    }
+}
