@@ -1,0 +1,26 @@
+​
+
+import java.util.*;
+import java.util.stream.Stream;
+
+public class CodingTest {
+    public static void main(String[] args) {
+        //获取Collection集合的Stream流对象
+        Collection<String>collection=new ArrayList<>();
+        Stream s1=collection.stream();
+        //获取Map集合的Stream流对象
+        Map<String,Integer>maps=new HashMap<>();
+        /*键流*/
+        Stream<String>key=maps.keySet().stream();
+        /*值流*/
+        Stream<Integer>value=maps.values().stream();
+        /*键值对流*/
+        Stream<Map.Entry<String,Integer>>kav=maps.entrySet().stream();
+        //数组获取Stream流的对象
+        String[]name={"1","2","3"};
+        /*方法1 */Stream<String>namestream1=Arrays.stream(name);
+        /*方法2 */Stream<String>namestream2=Stream.of(name);
+    }
+}
+
+​
