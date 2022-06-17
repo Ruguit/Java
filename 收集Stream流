@@ -1,0 +1,31 @@
+import java.util.*;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class CodingTest {
+    public static void main(String[] args) {
+        //收集Stream流
+        List<Integer> list=new ArrayList<>();
+        Collections.addAll(list,1,2,3,4,5,6,7,8,9);
+        Stream<Integer>SS=list.stream();
+        //返回List集合
+        List<Integer>list1=SS.filter(s->s%2==0).collect(Collectors.toList());
+        System.out.println(list1);//[2, 4, 6, 8]
+        //返回Set集合
+        Set<Integer> set=list.stream().filter(new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer integer) {
+                return integer%2!=0;
+            }
+        }).collect(Collectors.toSet());
+        System.out.println(set);//[1, 3, 5, 7, 9]
+        //返回数组
+        Object[] o=list.stream().filter(s->s%3==0).toArray();
+        System.out.println(Arrays.toString(o));//[3, 6, 9]
+        //返回字符串
+        List<String>s= Arrays.asList("a", "b", "c");
+        String [] as=s.stream().toArray(String[]::new);
+        System.out.println(Arrays.toString(as));//[a, b, c]
+    }
+}
