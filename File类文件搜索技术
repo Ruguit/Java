@@ -1,0 +1,38 @@
+​
+import java.io.File;
+
+public class CodingTest {
+    public static void main(String[] args) throws Exception {
+
+    }
+
+    /***
+     *
+     * @param dir 被搜索的源目录
+     * @param filename 被搜索的文件名
+     */
+    public static void findFilePath(File dir ,String filename){
+        //判断是不是非空文件夹
+        if(dir!=null||dir.isDirectory()){
+            //拿到这个文件夹下的所有一级文件
+            File[] file=dir.listFiles();
+            //判断是否存在
+            if(file!=null&&file.length>0){
+                for (File file1 : file) {
+                    //是文件？
+                    if(file1.isFile()){
+                        if(file1.getName().contains(filename)){
+                            System.out.println("找到了"+file1.getAbsolutePath());
+                        }
+                    }else {//  是文件夹？
+                        findFilePath(file1,filename);//调用自己递归
+                    }
+                }
+            }
+        }else {
+            System.out.println("当前搜索的位置不是目录");
+        }
+    }
+}
+
+​
