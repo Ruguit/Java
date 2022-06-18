@@ -1,0 +1,21 @@
+​
+public class CodingTest {
+    public static void main(String[] args) {
+
+    }
+    public static void checkAge(int age) throws Exception{
+        if(age>0||age>120){
+            throw new MyThrow("年龄异常");
+        }
+    }
+}
+class MyThrow extends Exception{
+    public MyThrow() {
+    }
+
+    public MyThrow(String message) {
+        super(message);
+    }
+}
+
+​
