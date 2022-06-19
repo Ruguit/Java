@@ -1,0 +1,17 @@
+
+import java.util.Arrays;
+
+public class CodingTest {
+    public static void main(String[] args) throws Exception {
+        //编码  文->字节
+        String varchar="hello world";
+        byte[] bytes=varchar.getBytes("UTF-8");
+        System.out.println(Arrays.toString(bytes));
+        //[104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+
+        //解码 字节->文
+        String num=new String(bytes,"UTF-8");
+        System.out.println(num);
+        //hello world
+    }
+}
