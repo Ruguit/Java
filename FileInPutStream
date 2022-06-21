@@ -1,0 +1,25 @@
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+public class TestDamo {
+    public static void main(String[] args) {
+        //字节输入流
+        try {
+            InputStream is=new FileInputStream("E:\\filedamo\\bbb.txt");//可以填文件对象或路径
+            System.out.println(is.read());//每次读取一个字节
+            byte[]bytes=new byte[1024];
+            System.out.println(is.read(bytes));//每次读取一个bytes数组大小的字节
+
+
+            File f=new File("E:\\filedamo\\bbb.txt");
+            byte []bytes1=new byte[(int)f.length()];
+            System.out.println(bytes1);
+
+            //官方API
+            byte[] bytes2= is.readAllBytes();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
