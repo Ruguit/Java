@@ -1,0 +1,28 @@
+import java.io.*;
+
+public class Test1 {
+    public static void main(String[] args) throws Exception {
+        //缓冲流
+        InputStream in=new FileInputStream("");
+        BufferedInputStream bin=new BufferedInputStream(in);
+
+        OutputStream os=new FileOutputStream("");
+        BufferedOutputStream osn=new BufferedOutputStream(os);
+        
+        Reader reader=new FileReader("");
+        BufferedReader bufferedReader=new BufferedReader(reader);
+        bufferedReader.readLine();//读一行数据
+        
+        Writer writer=new FileWriter("");
+        BufferedWriter writer1=new BufferedWriter(writer);
+        writer1.newLine();//换行操作
+        
+        //字符输入转换流
+        InputStream inputStream=new FileInputStream("");
+        Reader inputStreamReader=new InputStreamReader(inputStream);
+        //字符输出转换流
+        OutputStream outputStream=new FileOutputStream("");
+        Writer writer2=new OutputStreamWriter(outputStream,"GBK");
+        
+    }
+}
