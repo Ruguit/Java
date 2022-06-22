@@ -1,0 +1,17 @@
+
+import java.io.*;
+
+public class Test1 {
+    public static void main(String[] args) throws Exception {
+       //打印流
+        PrintStream pa=new PrintStream("");
+        pa.print("这是一个打印流，这里可以打印任意类型的数据");
+        PrintWriter pw=new PrintWriter("");
+        pw.print("这是一个打印流，这里可以打印任意类型的数据");
+        //上面这两个流在打印功能上没有区别
+        
+        System.setOut(pa);
+        System.out.println("这里面是内容经过上一行的改变就会直接打印到对应的文件中去");
+
+
+    }
