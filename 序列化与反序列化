@@ -1,0 +1,50 @@
+import java.io.*;
+
+public class Test1 {
+    public static void main(String[] args) throws Exception {
+       //对象序列化
+        //创建对象
+        Student s=new Student("李华");
+        ObjectOutputStream ops=
+                new ObjectOutputStream(new FileOutputStream(""));
+        //直接调用序列化方法
+        ops.writeObject(s);
+        ops.close();
+
+        //反序列化
+        ObjectInputStream oin=new ObjectInputStream(new FileInputStream(""));
+        Student ss=(Student) oin.readObject();
+        oin.close();
+    }
+}
+class Student implements Serializable{
+    //声明序列化版本号
+    //序列化与反序列化的版本号必须一致，有改动就要先序列化才能反序列化
+    private static  final long SerializableNumber=1;
+
+    //成员变量使用transient修饰 就不可以被序列化
+    private String name;
+
+    public Student() {
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                '}';
+    }
+}
