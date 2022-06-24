@@ -1,0 +1,47 @@
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+
+public class Test1 {
+    public static void main(String[] args) throws Exception {
+        //创建方法1 创建线程类继承Thread类
+        MyThread m1=new MyThread();
+        m1.start();
+        //创建线程方法2；创建线程任务类MyRunable实现Runable接口 将Runable对象交给Thread处理
+        MyRunable m2=new MyRunable();
+        Thread mm2=new Thread(m2);
+        mm2.start();
+        //创建Runable匿名内部类对象交给Thread
+        Runnable runnable=new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("子线程三号开始跑动");
+            }
+        };
+        new Thread(runnable).start();
+        //方法三：利用Callable与FutureTask接口实现
+        MyCallable callable=new MyCallable();
+        FutureTask futureTask=new FutureTask(callable);
+        new Thread(futureTask).start();
+        System.out.println(futureTask.get());
+    }
+}
+class MyThread extends Thread{
+    @Override
+    public void run(){
+        System.out.println("子线程一号开始跑动");
+    }
+}
+
+class MyRunable implements Runnable{
+    @Override
+    public void run() {
+        System.out.println("子线程二号开始跑动");
+    }
+}
+class MyCallable implements Callable{
+    @Override
+    public Object call() throws Exception {
+        return "子线程四号开始跑动";
+    }
+}
