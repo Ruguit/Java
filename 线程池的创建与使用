@@ -1,0 +1,45 @@
+
+import java.util.concurrent.*;
+
+public class TestDamo {
+    
+    public static void main(String[] args) {
+        /*
+        * public ThreadPoolExecutor(int corePoolSize,核心线程的数量
+                              int maximumPoolSize, 该线程池支持的最大线程数量
+                              long keepAliveTime, 指定零时线程存活的时间
+                              TimeUnit unit, 指定存活时间的单位 秒 分 时 天
+                              BlockingQueue<Runnable> workQueue, 指定任务队列
+                              ThreadFactory threadFactory, 指定在那个线程工厂创建线程
+                              RejectedExecutionHandler handler)  指定线程忙 任务满时，新任务怎么办？
+        * */
+        ExecutorService pool=
+                new ThreadPoolExecutor
+                        (3,5,8,
+                                TimeUnit.SECONDS,new ArrayBlockingQueue<>(6),
+                                Executors.defaultThreadFactory(),
+                                new ThreadPoolExecutor.AbortPolicy());
+        MyRunable myRunable=new MyRunable();
+        pool.execute(myRunable);//执行Runable
+        /*
+        * Future<T>submit (Callable<T>task) 执行Callable
+        * void shutdown()等待任务执行完毕后关闭线程
+        * List<Runable>shutdownNow() 立刻关闭线程，停止正在执行的方法，并返回未执行的任务
+        * */
+        pool.shutdown();
+    }
+}
+class MyRunable implements Runnable{
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(2000);
+                System.out.println("线程运行:"+(i+1));
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
