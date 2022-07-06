@@ -1,0 +1,24 @@
+
+ 
+import java.util.Timer;
+import java.util.TimerTask;
+ 
+public class TestDamo {
+    
+    public static void main(String[] args) {
+        Timer timer=new Timer();//定时器本身就是一个线程
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread()+"执行一次");
+            }
+        },3000,2000);
+        /*
+        * Timer是单线程，处理多个任务按照顺序执行，存在延时与设置定时器的时间有出入
+        * 可能会因为其中的某个异常使Timer线程死亡，从而影响后续任务，
+        * */
+    }
+}
+————————————————
+版权声明：本文为CSDN博主「洋啊桑815」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_66344432/article/details/125632005
