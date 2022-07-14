@@ -1,0 +1,38 @@
+​
+
+import java.net.*;
+
+public class TestDamo {
+    public static void main(String[] args) throws Exception {
+        //UDP通信
+        String str="hello";
+        byte []bytes=str.getBytes();
+        System.out.println("创建数据包对象");
+        DatagramPacket dataStart=new DatagramPacket
+                (bytes, bytes.length,InetAddress.getLocalHost(),8080);
+        System.out.println("创建发送端");
+        DatagramSocket datagramSocket=new DatagramSocket();
+        System.out.println("发生数据");
+        datagramSocket.send(dataStart);
+    }
+}
+
+​​
+
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class TestDamo2 {
+    public static void main(String[] args) throws Exception {
+        System.out.println("创建数据包对象");
+        DatagramPacket datagramPacket=new DatagramPacket(new byte[100],100);
+        System.out.println("创建接收端");
+        DatagramSocket datagramSocket=new DatagramSocket(8080);
+        System.out.println("等待接受数据");
+        datagramSocket.receive(datagramPacket);
+        System.out.println("接受数据成功");
+
+    }
+}
+
+​
